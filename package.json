@@ -19,7 +19,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy:prod": "npm run build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
+    "deploy:prod": "npm run build && vercel ./build --confirm --no-clipboard --token=E4NWmeprAjFgjm7Zhqu57hUL --prod"
   },
   "devDependencies": {
     "eslint": "8.57.0",
