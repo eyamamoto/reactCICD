@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
        #instala comando de instalação do projeto para ter os arquivos de execução
-      - name: Run Installation
+      - name: Run pack Installation 
         run: npm install
       #executa o linter
       - name: Run linter
