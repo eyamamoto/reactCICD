@@ -1,4 +1,4 @@
-name: "CI - Integração continua"
+name: "CD - Integração continua - Entrega e Build"
 
 #secrets do github em https://github.com/eyamamoto/reactCICD/settings/secrets/actions
 env:
