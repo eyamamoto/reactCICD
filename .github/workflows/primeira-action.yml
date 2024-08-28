@@ -1,0 +1,16 @@
+name: "CI(Integração continua)"
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  exemplo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+    
+    - name : executa um comando ou script
+        run: echo hello world!
