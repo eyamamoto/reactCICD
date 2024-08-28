@@ -1,0 +1,29 @@
+name: CD - Integração continua - Entrega e Build
+
+#secrets do github em https://github.com/eyamamoto/reactCICD/settings/secrets/actions
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }},
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }},
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }},
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+       #instala comando de instalação do projeto para ter os arquivos de execução
+      - name: Run pack Installation 
+        run: npm install
+
+      #executa o linter
+      - name: Run linter
+        run: npm run lint
+      
+      - name: run Deploy
+        run: npm run deploy:prod

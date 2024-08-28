@@ -1,0 +1,19 @@
+name: CI - Linter
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+       #instala comando de instalação do projeto para ter os arquivos de execução
+      - name: Run pack Installation 
+        run: npm install
+      #executa o linter
+      - name: Run linter
+        run: npm run lint
